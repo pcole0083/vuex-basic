@@ -1,0 +1,17 @@
+.grid {
+  display: grid;
+  max-width: 100%;
+  grid-template-columns: 50% 50%;
+  grid-template-areas:
+    "header header"
+    "col1 col2"
+    "colfull colfull"
+    "footer footer";
+}
+
+$basic-areas: header col1 col2 colfull footer;
+@each $area in $basic-areas {
+  [data-area="#{$area}"] {
+    grid-area: $area;
+  }
+}
